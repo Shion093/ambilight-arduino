@@ -4,7 +4,7 @@
 
 #include "FastLED.h"
 
-#define NUM_LEDS 114 // Max LED count
+#define NUM_LEDS 60 // Max LED count
 #define LED_PIN 6 // arduino output pin
 #define GROUND_PIN 10
 #define BRIGHTNESS 255 // maximum brightness
@@ -155,6 +155,7 @@ void setup()
         startTime  = micros();
         mode       = MODE_HEADER; // Begin next header search
         FastLED.show();
+         while(Serial.available()) { Serial.read(); } 
       }
     } // end switch
   } // end for(;;)
